@@ -69,7 +69,7 @@ export function NavBar() {
                         />
                         <div className="p-4 ">
                            <Link
-                              href={`/users/1/profile`}
+                              href={`#`}
                               className={`flex-nowrap flex hover:text-white font-bold text-white  `}
                            >
                               Administrador
@@ -87,13 +87,7 @@ export function NavBar() {
                >
                   <Link href="/home">Admin</Link>
                </li>
-               <li
-                  className={`p-4 hoverItem ${
-                     router.pathname == "/documentation" ? "active" : ""
-                  }`}
-               >
-                  <Link href="/documentation">Documentation</Link>
-               </li>
+
                <li
                   className="p-4 flex items-center gap-2 cursor-pointer hover:text-red-400 hoverItem"
                   onClick={() => router.push("/")}
@@ -140,12 +134,6 @@ export function NavBar() {
                   >
                      <Link href="/">Home</Link>
                   </li>
-                  <li
-                     className="text-2xl hoverItem"
-                     onClick={() => setOpenedMenu(false)}
-                  >
-                     <Link href="/documentation">Documentation</Link>
-                  </li>
 
                   <>
                      <hr className="flex h-2 border-sky-500 mt-5 w-[50%] justify-start self-start" />
@@ -154,7 +142,7 @@ export function NavBar() {
                         className="hoverItem"
                      >
                         <UserMenuButton
-                           path={`/users/:userid/routines`}
+                           path={`/clientes`}
                            className={`text-${navTextColor} text-2xl p-0`}
                         >
                            <IoIosCreate />
@@ -166,29 +154,18 @@ export function NavBar() {
                         className="hoverItem"
                      >
                         <UserMenuButton
-                           path={`/users/:userid/routines`}
+                           path={`/pedidos`}
                            className={`text-${navTextColor} text-2xl p-0`}
                         >
                            <IoIosCreate />
                            Pedidos
                         </UserMenuButton>
                      </li>
-                     <li
-                        onClick={() => setOpenedMenu(false)}
-                        className="hoverItem text-2xl p-0"
-                     >
-                        <UserMenuButton
-                           path={`/users/:userid/dashboard`}
-                           className={`text-${navTextColor} text-2xl p-0`}
-                        >
-                           <BsBarChartLineFill />
-                           Dashboard
-                        </UserMenuButton>
-                     </li>
+
                      <hr className="flex h-2 border-green-500 mt-5 w-[50%] justify-start self-start" />
                      <Link
                         className="flex bg-sky-500 rounded p-2 max-[500px]:justify-center max-[500px]:pt-5 hoverItem "
-                        href={`/profile`}
+                        href={`/#`}
                      >
                         <li
                            className="flex items-center gap-2 max-[500px]:flex-col "
