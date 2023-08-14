@@ -15,8 +15,7 @@ export function LoginForm() {
       }
    };
    return (
-      <form className="text-black mt-10 py-10 w-full h-full bg-white">
-         <h1>Bem vindo</h1>
+      <form className="text-black mt-10 py-10 w-full h-full ">
          <span className="flex flex-col gap-5 w-full p-4 rounded h-full">
             <label className="flex flex-col text-left text-zinc-500">
                Email

@@ -1,7 +1,6 @@
 import React from "react";
 import { IoIosCreate } from "react-icons/io";
 import UserMenuButton from "../Button/UserMenuButton";
-import { GoSignOut } from "react-icons/go";
 import { useRouter } from "next/router";
 import { TypeCliente } from "../../types";
 

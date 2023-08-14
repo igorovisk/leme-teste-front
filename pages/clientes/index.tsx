@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import AdminLayout from "../../components/Layout/AdminLayout";
 import useClientes from "../../hooks/clientes/useClientes";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
-import { TypeCliente } from "../../types";
 import ClienteTable from "../../components/Tables/ClientesTable";
-import Button from "../../components/Button/Button";
 import Link from "next/link";
 
 export default function IndexPage() {

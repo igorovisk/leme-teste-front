@@ -30,7 +30,6 @@ function usePostPedido() {
    return useMutation(
       ["postPedido"],
       async (pedido: PedidoPayload): Promise<PedidoResponse> => {
-         console.log(pedido, "pedido");
          const response = await Api.post(
             `clientes/${pedido.cliente_id}/pedidos`,
             pedido

@@ -4,7 +4,6 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { GoSignOut } from "react-icons/go";
 import UserMenuButton from "../Button/UserMenuButton";
 import { IoIosCreate } from "react-icons/io";
-import { BsBarChartLineFill } from "react-icons/bs";
 import { useRouter } from "next/router";
 
 export function NavBar() {

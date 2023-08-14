@@ -99,9 +99,9 @@ export function CadastroPedidoForm() {
                      setPedido_status_id(Number(ev.target.value))
                   }
                >
-                  <option value={0}>Solicitado</option>
-                  <option value={1}>Concluído</option>
-                  <option value={2}>Cancelado</option>
+                  <option value={1}>Solicitado</option>
+                  <option value={2}>Concluído</option>
+                  <option value={3}>Cancelado</option>
                </select>
             </label>
             <label className="flex flex-col text-left text-zinc-500">

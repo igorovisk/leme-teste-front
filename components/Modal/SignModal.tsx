@@ -5,8 +5,7 @@ import { LoginForm } from "../Form";
 function SignModal(props: { isOpen: Boolean; setIsOpen: any }) {
    const handleKeyDown = (event) => {
       if (event.key === "Escape") {
-         // Verifica se a tecla pressionada foi a tecla ESC
-         props.setIsOpen(false); // Fecha o modal
+         props.setIsOpen(false);
       }
    };
    useEffect(() => {
@@ -31,14 +30,12 @@ function SignModal(props: { isOpen: Boolean; setIsOpen: any }) {
                   onClick={() => props.setIsOpen(false)}
                />
             )}
-            {/* modal */}
             {props.isOpen && (
                <div
                   className={`flex align-center rounded justify-center absolute top-[-120vh] left-[0] right-0 bottom-0 z-[2] bg-slate-100 w-[350px] max-w-[500px] m-auto p-4 modal-animation h-fit ${
                      props.isOpen ? "slide-in" : ""
                   } sm:w-[500px]`}
                >
-                  {/* buttons */}
                   <div
                      className="absolute right-[-1rem] top-[-1rem] text-black cursor-pointer bg-zinc-200 p-2 rounded z-[2]"
                      onClick={() => {
@@ -56,7 +53,6 @@ function SignModal(props: { isOpen: Boolean; setIsOpen: any }) {
                         <AiOutlineLogin /> Login
                      </button>
                   </div>
-                  {/* buttons */}
 
                   {<LoginForm />}
                </div>

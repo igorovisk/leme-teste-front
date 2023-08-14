@@ -21,7 +21,7 @@ export function IndexPage() {
 
          const a = document.createElement("a");
          a.href = url;
-         a.download = "pedidos.csv"; // Set the desired file name
+         a.download = "pedidos.csv";
          a.click();
 
          URL.revokeObjectURL(url);
