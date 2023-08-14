@@ -7,7 +7,7 @@ import ClienteTable from "../../components/Tables/ClientesTable";
 import Button from "../../components/Button/Button";
 import Link from "next/link";
 
-export function IndexPage() {
+export default function IndexPage() {
    const { data: clientes, isFetching, isLoading } = useClientes();
    if (isFetching || isLoading) {
       return (
@@ -38,4 +38,3 @@ export function IndexPage() {
       </AdminLayout>
    );
 }
-export default IndexPage;

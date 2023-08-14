@@ -5,7 +5,7 @@ import EditClienteForm from "../../../components/Form/Cliente/EditClienteForm";
 import { useRouter } from "next/router";
 import AdminLayout from "../../../components/Layout/AdminLayout";
 
-function ClienteIdIndexPage() {
+export default function ClienteIdIndexPage() {
    const router = useRouter();
    const { clienteId } = router.query;
    const { data: cliente, isFetching } = useClienteById(Number(clienteId));
@@ -32,4 +32,3 @@ function ClienteIdIndexPage() {
       </AdminLayout>
    );
 }
-export default ClienteIdIndexPage;

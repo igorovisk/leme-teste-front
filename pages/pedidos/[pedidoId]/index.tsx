@@ -5,7 +5,7 @@ import AdminLayout from "../../../components/Layout/AdminLayout";
 import EditPedidoForm from "../../../components/Form/Pedidos/EditPedidoForm";
 import usePedidoById from "../../../hooks/pedidos/usePedidoById";
 
-function PedidoIdIndexPage() {
+export function PedidoIdIndexPage() {
    const router = useRouter();
    const { pedidoId } = router.query;
    const { data: pedido, isFetching } = usePedidoById(Number(pedidoId));
@@ -17,7 +17,6 @@ function PedidoIdIndexPage() {
       );
    }
 
-   console.log(pedido, "pedido na index");
    return (
       <AdminLayout>
          <div className="w-full h-full flex flex-col bg-slate-100 pt-10 justify-center items-center">
