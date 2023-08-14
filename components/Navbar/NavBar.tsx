@@ -54,45 +54,58 @@ export function NavBar() {
             </Link>
             {/* Desktop Menu */}
             <ul className="hidden md:flex items-center justify-end ">
-               <>
-                  <li
-                     className={`flex rounded justify-center hoverItem items-center pl-2 pr-2 ${
-                        navBgColor === "white" ? "bg-black" : "bg-violet-800 "
-                     }  `}
-                  >
-                     <div className="flex justify-center items-center">
-                        <img
-                           alt="user-profile-picture"
-                           src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"
-                           className="hidden lg:inline-block relative h-12 w-12 rounded-full border-2 border-white object-cover object-center hover:z-10 hover:cursor-pointer focus:z-10 "
-                        />
-                        <div className="p-4 ">
-                           <Link
-                              href={`#`}
-                              className={`flex-nowrap flex hover:text-white font-bold text-white  `}
-                           >
-                              Administrador
-                           </Link>
+               {router.pathname !== "/" && (
+                  <>
+                     <li
+                        className={`flex rounded justify-center hoverItem items-center pl-2 pr-2 ${
+                           navBgColor === "white"
+                              ? "bg-black"
+                              : "bg-violet-800 "
+                        }  `}
+                     >
+                        <div className="flex justify-center items-center">
+                           <img
+                              alt="user-profile-picture"
+                              src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"
+                              className="hidden lg:inline-block relative h-12 w-12 rounded-full border-2 border-white object-cover object-center hover:z-10 hover:cursor-pointer focus:z-10 "
+                           />
+                           <div className="p-4 ">
+                              <Link
+                                 href={`#`}
+                                 className={`flex-nowrap flex hover:text-white font-bold text-white  `}
+                              >
+                                 Administrador
+                              </Link>
+                           </div>
                         </div>
-                     </div>
+                     </li>
+
+                     <li className="p-4 font-bold">|</li>
+                  </>
+               )}
+               {router.pathname !== "/" && (
+                  <li
+                     className={`p-4 hoverItem  ${
+                        router.pathname == "/home" ? "active" : ""
+                     }`}
+                  >
+                     <Link href="/home">Admin</Link>
                   </li>
-
-                  <li className="p-4 font-bold">|</li>
-               </>
-               <li
-                  className={`p-4 hoverItem  ${
-                     router.pathname == "/home" ? "active" : ""
-                  }`}
-               >
-                  <Link href="/home">Admin</Link>
-               </li>
-
+               )}
                <li
                   className="p-4 flex items-center gap-2 cursor-pointer hover:text-red-400 hoverItem"
                   onClick={() => router.push("/")}
                >
-                  <GoSignOut /> Logout
+                  <GoSignOut /> Login
                </li>
+               {router.pathname !== "/" && (
+                  <li
+                     className="p-4 flex items-center gap-2 cursor-pointer hover:text-red-400 hoverItem"
+                     onClick={() => router.push("/")}
+                  >
+                     <GoSignOut /> Logout
+                  </li>
+               )}
             </ul>
 
             {/* Hamburguer Button */}
@@ -136,62 +149,66 @@ export function NavBar() {
 
                   <>
                      <hr className="flex h-2 border-sky-500 mt-5 w-[50%] justify-start self-start" />
-                     <li
-                        onClick={() => setOpenedMenu(false)}
-                        className="hoverItem"
-                     >
-                        <UserMenuButton
-                           path={`/clientes`}
-                           className={`text-${navTextColor} text-2xl p-0`}
-                        >
-                           <IoIosCreate />
-                           Clientes
-                        </UserMenuButton>
-                     </li>
-                     <li
-                        onClick={() => setOpenedMenu(false)}
-                        className="hoverItem"
-                     >
-                        <UserMenuButton
-                           path={`/pedidos`}
-                           className={`text-${navTextColor} text-2xl p-0`}
-                        >
-                           <IoIosCreate />
-                           Pedidos
-                        </UserMenuButton>
-                     </li>
-
-                     <hr className="flex h-2 border-green-500 mt-5 w-[50%] justify-start self-start" />
-                     <Link
-                        className="flex bg-sky-500 rounded p-2 max-[500px]:justify-center max-[500px]:pt-5 hoverItem "
-                        href={`/#`}
-                     >
-                        <li
-                           className="flex items-center gap-2 max-[500px]:flex-col "
-                           onClick={() => setOpenedMenu(false)}
-                        >
-                           <img
-                              alt="user-profile-picture"
-                              src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"
-                              className="relative inline-block h-12 w-12 rounded-full border-2 border-white object-cover object-center hover:z-10 hover:cursor-pointer focus:z-10 "
-                           />
-                           <div
-                              className="p-4  duration-200 flex-nowrap flex  text-2xl font-bold"
+                     {router.pathname !== "/" && (
+                        <>
+                           <li
                               onClick={() => setOpenedMenu(false)}
+                              className="hoverItem"
                            >
-                              Adminstrador
-                           </div>
-                        </li>
-                     </Link>
-                     <li
-                        className="flex items-center gap-2 cursor-pointer p-4 text-2xl m-auto hoverItem hover:text-red-500"
-                        onClick={() => {
-                           setOpenedMenu(false);
-                           router.push("/");
-                        }}
-                     >
-                        <GoSignOut /> Logout
-                     </li>
+                              <UserMenuButton
+                                 path={`/clientes`}
+                                 className={`text-${navTextColor} text-2xl p-0`}
+                              >
+                                 <IoIosCreate />
+                                 Clientes
+                              </UserMenuButton>
+                           </li>
+                           <li
+                              onClick={() => setOpenedMenu(false)}
+                              className="hoverItem"
+                           >
+                              <UserMenuButton
+                                 path={`/pedidos`}
+                                 className={`text-${navTextColor} text-2xl p-0`}
+                              >
+                                 <IoIosCreate />
+                                 Pedidos
+                              </UserMenuButton>
+                           </li>
+
+                           <hr className="flex h-2 border-green-500 mt-5 w-[50%] justify-start self-start" />
+                           <Link
+                              className="flex bg-sky-500 rounded p-2 max-[500px]:justify-center max-[500px]:pt-5 hoverItem "
+                              href={`/#`}
+                           >
+                              <li
+                                 className="flex items-center gap-2 max-[500px]:flex-col "
+                                 onClick={() => setOpenedMenu(false)}
+                              >
+                                 <img
+                                    alt="user-profile-picture"
+                                    src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"
+                                    className="relative inline-block h-12 w-12 rounded-full border-2 border-white object-cover object-center hover:z-10 hover:cursor-pointer focus:z-10 "
+                                 />
+                                 <div
+                                    className="p-4  duration-200 flex-nowrap flex  text-2xl font-bold"
+                                    onClick={() => setOpenedMenu(false)}
+                                 >
+                                    Adminstrador
+                                 </div>
+                              </li>
+                           </Link>
+                           <li
+                              className="flex items-center gap-2 cursor-pointer p-4 text-2xl m-auto hoverItem hover:text-red-500"
+                              onClick={() => {
+                                 setOpenedMenu(false);
+                                 router.push("/");
+                              }}
+                           >
+                              <GoSignOut /> Logout
+                           </li>
+                        </>
+                     )}
                   </>
                </ul>
             </div>
