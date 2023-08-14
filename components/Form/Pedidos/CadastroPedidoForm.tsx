@@ -13,7 +13,7 @@ export function CadastroPedidoForm() {
    const [produto, setProduto] = useState<string>("");
    const [valor, setValor] = useState<number>(0);
    const [data, setData] = useState<string>();
-   const [pedido_status_id, setPedido_status_id] = useState(0);
+   const [pedido_status_id, setPedido_status_id] = useState<number>(1);
    const [cliente, setCliente] = useState<TypeCliente>();
 
    const { data: clientes, isFetching, isLoading } = useClientes();
@@ -42,10 +42,11 @@ export function CadastroPedidoForm() {
          produto,
          valor: Number(valor),
          data: new Date(data),
-         pedido_status_id: pedido_status_id,
+         pedido_status_id: Number(pedido_status_id),
          cliente_id: Number(cliente.id),
          ativo: 0,
       };
+      console.log(payload, "payload");
       await mutateAsync(payload);
       router.push("/pedidos");
    };
@@ -94,7 +95,7 @@ export function CadastroPedidoForm() {
                   className={`signFormInput rounded`}
                   name="ativo"
                   id="ativo"
-                  value={pedido_status_id}
+                  value={Number(pedido_status_id)}
                   onChange={(ev: React.ChangeEvent<HTMLSelectElement>) =>
                      setPedido_status_id(Number(ev.target.value))
                   }
