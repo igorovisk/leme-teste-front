@@ -8,7 +8,6 @@ function usePutPedido() {
    return useMutation(
       ["putPedido"],
       async (pedido: TypePedido): Promise<any> => {
-         console.log(pedido, "PEDIDO NO PUT");
          const response = await Api.put(
             `clientes/${pedido.cliente_id}/pedidos/${pedido.pedido_id}`,
             pedido
