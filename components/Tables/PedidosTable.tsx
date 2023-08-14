@@ -54,7 +54,7 @@ const PedidosTable: React.FC<Props> = ({ pedidos }) => {
                            {pedido.cliente_id}
                         </td>
                         <td className="p-2 hidden md:table-cell">
-                           {pedidoStatusId?.[pedido.pedido_status_id]}
+                           {pedidoStatusId?.[pedido.pedido_status_id - 1]}
                         </td>
                         <td className="p-2 hidden md:table-cell">imagens</td>
                         <td className="p-2">
