@@ -19,7 +19,7 @@ function usePutPedido() {
          onSuccess: async () => {
             await queryClient.invalidateQueries(["pedido"]);
             await queryClient.invalidateQueries(["pedidos"]);
-            toast.success(`Routine sucessfully edited..`, {
+            toast.success(`Pedido sucessfully edited..`, {
                position: "top-right",
             });
          },

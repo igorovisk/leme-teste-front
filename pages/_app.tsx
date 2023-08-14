@@ -26,7 +26,7 @@ export default function App({ Component, pageProps }) {
             theme="colored"
          />
          <Head>
-            <title>RoutineWorks</title>
+            <title>Leme Admin</title>
             <link rel="icon" href="/favicon.ico" />
          </Head>
          <NavBar />
