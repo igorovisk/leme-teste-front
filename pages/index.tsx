@@ -31,7 +31,7 @@ export default function Index() {
                   <h2 className="text-5xl font-bold">Leme Admin</h2>
 
                   <p className="py-5 text-xl mb-5 mt-5">
-                     Adminitre seus clientes e pedidos
+                     Administre seus clientes e pedidos
                   </p>
 
                   <div className="flex gap-10 justify-center items-center">
